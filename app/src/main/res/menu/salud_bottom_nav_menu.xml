@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_medic"
+        android:icon="@drawable/heal01_meds"
+        android:title="@string/menu_medic" />
+    <item
+        android:id="@+id/nav_categ"
+        android:icon="@drawable/sec_heal_black_24dp"
+        android:title="@string/menu_categ" />
+</menu>

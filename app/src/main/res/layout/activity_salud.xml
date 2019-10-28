@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <include
+        layout="@layout/content_salud"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/txtCategoriaMed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentBottom="false"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="75dp"
+        android:layout_marginBottom="155dp"
+        android:background="@color/colorLabel"
+        android:padding="2dp"
+        android:text="@string/action_categoria"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        android:visibility="invisible" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabCategoriaMed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="@dimen/fab_margin_mini"
+        android:layout_marginBottom="@dimen/fab_margin_mini_nav1"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="invisible"
+        app:backgroundTint="@color/colorSecondAccent"
+        app:fabSize="auto"
+        app:pressedTranslationZ="@dimen/fab_translation_z"
+        app:srcCompat="@drawable/sec_heal_black_24dp" />
+
+    <TextView
+        android:id="@+id/txtMedicamento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentBottom="false"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="75dp"
+        android:layout_marginBottom="219dp"
+        android:background="@color/colorLabel"
+        android:padding="2dp"
+        android:text="@string/action_medicamento"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        android:visibility="invisible" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabMedicamento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="@dimen/fab_margin_mini"
+        android:layout_marginBottom="@dimen/fab_margin_mini_nav2"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="invisible"
+        app:backgroundTint="@color/colorSecondAccent"
+        app:fabSize="auto"
+        app:pressedTranslationZ="@dimen/fab_translation_z"
+        app:srcCompat="@drawable/heal01_meds" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabSalud"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="@dimen/fab_margin"
+        android:layout_marginBottom="@dimen/fab_margin_nav"
+        android:clickable="true"
+        android:focusable="true"
+        app:srcCompat="@drawable/gen_add_black_24dp" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

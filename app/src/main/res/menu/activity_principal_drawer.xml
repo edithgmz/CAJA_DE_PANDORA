@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_alarms"
+            android:icon="@drawable/sec_alarm_black_24dp"
+            android:title="@string/menu_alarms" />
+        <item
+            android:id="@+id/nav_notes"
+            android:icon="@drawable/sec_notes_black_24dp"
+            android:title="@string/menu_notes" />
+        <item
+            android:id="@+id/nav_activities"
+            android:icon="@drawable/sec_activities_black_24dp"
+            android:title="@string/menu_activity" />
+        <item
+            android:id="@+id/nav_health"
+            android:icon="@drawable/sec_heal_black_24dp"
+            android:title="@string/menu_health" />
+        <item
+            android:id="@+id/nav_money"
+            android:icon="@drawable/sec_money_black_24dp"
+            android:title="@string/menu_money" />
+    </group>
+
+    <item android:title="@string/txt_extras">
+        <menu>
+            <item
+                android:id="@+id/nav_tdah"
+                android:icon="@drawable/gen_help_outline_black_24dp"
+                android:title="@string/menu_tdah" />
+            <item
+                android:id="@+id/nav_about"
+                android:icon="@drawable/gen_info_outline_black_24dp"
+                android:title="@string/menu_about" />
+            <item
+                android:id="@+id/nav_close"
+                android:icon="@drawable/gen_close_black_24dp"
+                android:title="@string/menu_close" />
+        </menu>
+    </item>
+
+</menu>

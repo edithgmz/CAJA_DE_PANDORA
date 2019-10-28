@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_ingreso"
+        android:icon="@drawable/fin_ingreso"
+        android:title="@string/menu_ingreso" />
+
+    <item
+        android:id="@+id/nav_gasto"
+        android:icon="@drawable/fin_gasto"
+        android:title="@string/menu_gasto" />
+    <item
+        android:id="@+id/nav_stats"
+        android:icon="@drawable/fin_stats"
+        android:title="@string/menu_stats" />
+
+</menu>

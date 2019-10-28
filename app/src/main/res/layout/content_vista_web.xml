@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ui.extras.VistaWeb"
+    tools:showIn="@layout/activity_vista_web">
+
+    <WebView
+        android:id="@+id/vistaWeb"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ProgressBar
+        android:id="@+id/loadWeb"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
+
+    <TextView
+        android:id="@+id/txtWeb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:labelFor="@id/loadWeb"
+        android:layout_below="@id/loadWeb"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="13dp"
+        android:layout_marginEnd="13dp"
+        android:text="@string/txt_web_load"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="#444444" />
+
+</RelativeLayout>

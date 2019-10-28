@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:baselineAligned="false"
+    android:padding="5dp">
+
+    <ImageView
+        android:id="@+id/notaImagen"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:contentDescription="@string/nota_img_imagen"
+        app:srcCompat="@drawable/ee06_crying" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/notaTitulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/nota_txt_ejem_titulo"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/notaExtracto"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="@string/nota_txt_ejem_cont"
+            android:textColor="@android:color/black" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/notaFecha"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="@string/nota_txt_ejem_fecha"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/notaActividades"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="2dp"
+                android:drawableStart="@drawable/act_activity_black_24dp"
+                android:text="@string/nota_acts_alar_meds" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/notaAlarmas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="2dp"
+                android:drawableStart="@drawable/sec_alarm_black_24dp"
+                android:text="@string/nota_acts_alar_meds" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/notaSalud"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="2dp"
+                android:drawableStart="@drawable/sec_heal_black_24dp"
+                android:text="@string/nota_acts_alar_meds" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="?android:attr/listDivider" />
+
+            <ImageView
+                android:id="@+id/notaEstadoEmocional"
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="2dp"
+                android:contentDescription="@string/nota_btn_edoemo"
+                app:srcCompat="@drawable/ee07_dead" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="?android:attr/listDivider" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

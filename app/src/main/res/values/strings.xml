@@ -1,0 +1,131 @@
+<resources>
+    <!--Nombre de la aplicación.-->
+    <string name="app_name">Caja de Pandora</string>
+    <!--Texto general-->
+    <string name="txt_settings">Configuración</string>
+    <string name="txt_save">Guardar</string>
+    <string name="txt_delete">Eliminar</string>
+    <string name="txt_cancel">Cancelar</string>
+    <string name="txt_nom">Nombre</string>
+    <string name="txt_desc">Descripción</string>
+    <string name="txt_web_load">Cargando, por favor espere…</string>
+    <string name="txt_categoria">Categoría</string>
+    <string-array name="array_categorias">
+        <item>Seleccione una categoría…</item>
+    </string-array>
+    <!--Opciones configuración-->
+    <string name="action_export">Exportar</string>
+    <!--Menú navegación-->
+    <string name="menu_alarms">Alarmas</string>
+    <string name="menu_notes">Notas</string>
+    <string name="menu_activity">Actividades</string>
+    <string name="menu_health">Salud</string>
+    <string name="menu_money">Finanzas</string>
+    <string name="menu_tdah">¿TDAH?</string>
+    <string name="menu_about">Acerca de</string>
+    <string name="menu_close">Cerrar</string>
+    <string name="txt_extras">Extras</string>
+    <string name="nav_header_message">La esperanza es lo último que se pierde.</string>
+    <string name="nav_drawer_open">Abrir cajón de navegación.</string>
+    <string name="nav_drawer_close">Cerrar cajón de navegación.</string>
+    <!--Actividades-->
+    <string name="act_fecha_hora">12-Nov-19, 11:30 AM</string>
+    <string name="act_hint_nombre">Actividad 1</string>
+    <string name="act_hint_desc">Descripción corta</string>
+    <!--Alarmas-->
+    <string name="alarm_hora">08:00</string>
+    <string name="alarm_periodo">AM</string>
+    <string name="alarm_repetir">Repetir semanalmente</string>
+    <string name="alarm_no_repetir">La alarma suena una vez</string>
+    <string name="alarm_snooze">Posponer</string>
+    <string name="alarm_tono">Tono de alarma</string>
+    <string name="alarm_days">Días de alarma</string>
+    <string name="alarm_snooze_op">5 minutos, 5 veces</string>
+    <string name="alarm_tono_op">The Dawn of the Morning</string>
+    <string name="alarm_day1">D</string>
+    <string name="alarm_day2">L</string>
+    <string name="alarm_day3">M</string>
+    <string name="alarm_day4">Mi</string>
+    <string name="alarm_day5">J</string>
+    <string name="alarm_day6">V</string>
+    <string name="alarm_day7">S</string>
+    <!--Finanzas-->
+    <string name="action_gasto">Gasto nuevo</string>
+    <string name="action_ingreso">Ingreso nuevo</string>
+    <string name="menu_ingreso">Ingreso</string>
+    <string name="menu_gasto">Gasto</string>
+    <string name="menu_stats">Estadísticas</string>
+    <string name="fin_txt_gasto">¿Cuánto gastaste?</string>
+    <string name="fin_txt_ingreso">¿Cuánto ganaste?</string>
+    <string name="fin_txt_gastos">Gastos</string>
+    <string name="fin_txt_ingresos">Ingresos</string>
+    <string name="fin_txt_nota">Nota</string>
+    <string name="fin_hint_gasto">500</string>
+    <string name="fin_hint_ingreso">1800</string>
+    <string name="fin_hint_gasto_nota">Recibo teléfono</string>
+    <string name="fin_hint_ingreso_nota">Beca manutención</string>
+    <!--Notas-->
+    <string name="nota_hint_titulo">Querido diario…</string>
+    <string name="nota_hint_contenido">Hoy he…</string>
+    <string name="nota_acts_alar_meds">0</string>
+    <string name="nota_imagen">Añadir imagen</string>
+    <string name="nota_audio">Añadir audio</string>
+    <string name="nota_edoemo">¿Cómo te sientes?</string>
+    <string name="nota_img_acts">Icono Actividades</string>
+    <string name="nota_img_alar">Icono Alarmas</string>
+    <string name="nota_img_imagen">Icono Imagen</string>
+    <string name="nota_img_meds">Icono Medicamentos</string>
+    <string name="nota_img_audio">Icono Audio</string>
+    <string name="nota_btn_edoemo">Icono Estado Emocional</string>
+    <string name="nota_btn_audio">Icono Añadir Audio</string>
+    <string name="nota_btn_imagen">Icono Añadir Imagen</string>
+    <string name="nota_txt_ejem_cont">03:45 PM Hoy en el trabajo…</string>
+    <string name="nota_txt_ejem_fecha">DOM 31</string>
+    <string name="nota_txt_ejem_titulo">Nota 1</string>
+    <!--Salud-->
+    <string name="action_medicamento">Medicamento nuevo</string>
+    <string name="action_categoria">Categoría nueva</string>
+    <string name="menu_medic">Medicamentos</string>
+    <string name="menu_categ">Categorías</string>
+    <string name="med_dosis">Dosis</string>
+    <string name="med_hora">Hora</string>
+    <string name="med_cantidad">Cantidad</string>
+    <string name="med_hint_nombre">Medicamento 1</string>
+    <string name="med_hint_dosis">1</string>
+    <string name="med_hint_cantidad">30</string>
+    <string name="med_hint_categoria">Categoría 1</string>
+    <!--TDAH-->
+    <string name="tdah_txt_aviso">Se requiere conexión a internet para acceder a los siguientes recursos.</string>
+    <string name="tdah_txt_test">Test realizado por Psych Central (inglés)</string>
+    <string name="tdah_btn_test">Prueba de Detección de TDAH</string>
+    <string name="tdah_txt_grupo">Comunidad en Facebook</string>
+    <string name="tdah_btn_grupo">Grupo de Apoyo Adultos con TDAH</string>
+    <string name="tdah_txt_chadd">Información sobre el TDAH</string>
+    <string name="tdah_btn_chadd">Centro Nacional de Recursos del TDAH</string>
+    <string name="tdah_txt_juegos">Juegos en línea</string>
+    <string name="tdah_btn_puzzles">Rompecabezas</string>
+    <string name="tdah_btn_mandalas">Mandalas</string>
+    <string name="tdah_img_test">Icono Prueba Detección</string>
+    <string name="tdah_img_grupo">Icono Grupo Facebook</string>
+    <string name="tdah_img_chadd">Icono Recursos TDAH</string>
+    <string name="tdah_img_puzzles">Icono Puzzles</string>
+    <string name="tdah_img_mandalas">Icono Mandalas</string>
+    <!--Títulos pantallas-->
+    <string name="title_activity_alarmas">Alarmas</string>
+    <string name="title_activity_actividades">Actividades</string>
+    <string name="title_activity_notas">Notas</string>
+    <string name="title_activity_estado_emocional">Estado Emocional</string>
+    <string name="title_activity_finanzas">Finanzas</string>
+    <string name="title_activity_salud">Salud</string>
+    <string name="title_activity_tdah">TDAH</string>
+    <string name="title_activity_info">Acerca de</string>
+    <string name="title_activity_crear_alarma">Alarma</string>
+    <string name="title_activity_crear_nota">Nota</string>
+    <string name="title_activity_crear_actividad">Actividad</string>
+    <string name="title_activity_crear_gasto">Gasto</string>
+    <string name="title_activity_crear_ingreso">Ingreso</string>
+    <string name="title_activity_crear_medicamento">Medicamento</string>
+    <string name="title_activity_crear_categoria">Categoría</string>
+    <string name="title_activity_configuracion">Configuración</string>
+
+</resources>

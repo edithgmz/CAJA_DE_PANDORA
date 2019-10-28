@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "939114880304",
+    "firebase_url": "https://caja-de-pandora-tdah.firebaseio.com",
+    "project_id": "caja-de-pandora-tdah",
+    "storage_bucket": "caja-de-pandora-tdah.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:939114880304:android:98b552836f9ec5cf1dfcf5",
+        "android_client_info": {
+          "package_name": "edith.gomez.cajadepandora"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "939114880304-d040vcajj1pmv5m9eljkrm0k7ic7oj5f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "edith.gomez.cajadepandora",
+            "certificate_hash": "f953693c1ea02bef1ca742e682fa837590c09f8e"
+          }
+        },
+        {
+          "client_id": "939114880304-0gcu1u6iedmhndrutujcpji02ohn06ot.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCc5b2AOg7JyNBsIpKdpXMrDifTVpJpMz8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "939114880304-0gcu1u6iedmhndrutujcpji02ohn06ot.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Colores por defecto de la aplicación.-->
+    <color name="colorPrimary">#01579B</color>
+    <color name="colorPrimaryDark">#1A237E</color>
+    <color name="colorAccent">#2196F3</color>
+    <color name="colorSecondAccent">#AAAAAA</color>
+    <!--Colores del calendario-->
+    <color name="colorCalendar">#43727E</color>
+    <color name="colorCalendarAccent">#006BBE</color>
+    <color name="colorCalendarDays">#53C0C0C1</color>
+    <color name="colorCalendarSelectedDay">#D2D2D2</color>
+    <color name="colorCalendarDaysDark">#53303030</color>
+    <color name="colorCalendarSelectedDayDark">#6B6B6B</color>
+    <!--Colores de las actividades-->
+    <color name="colorCategoria1">#66BB6A</color>
+    <color name="colorCategoria2">#FFCA28</color>
+    <color name="colorCategoria3">#EF5350</color>
+    <color name="colorBottomNav">#E9E9E9</color>
+    <color name="colorLabel">#212121</color>
+</resources>
