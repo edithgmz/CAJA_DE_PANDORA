@@ -10,9 +10,6 @@
     <string name="txt_desc">Descripción</string>
     <string name="txt_web_load">Cargando, por favor espere…</string>
     <string name="txt_categoria">Categoría</string>
-    <string-array name="array_categorias">
-        <item>Seleccione una categoría…</item>
-    </string-array>
     <!--Opciones configuración-->
     <string name="action_export">Exportar</string>
     <!--Menú navegación-->
@@ -29,9 +26,13 @@
     <string name="nav_drawer_open">Abrir cajón de navegación.</string>
     <string name="nav_drawer_close">Cerrar cajón de navegación.</string>
     <!--Actividades-->
-    <string name="act_fecha_hora">12-Nov-19, 11:30 AM</string>
+    <string name="act_fecha_hora">12-Nov-19, 11:30</string>
     <string name="act_hint_nombre">Actividad 1</string>
     <string name="act_hint_desc">Descripción corta</string>
+    <string name="act_txt_fecha_hora">Fecha y hora</string>
+    <string name="act_txt_fecha_2">10–06–2019</string>
+    <string name="act_txt_hora_2">09:35</string>
+    <string name="act_txt_categoria">Categoría</string>
     <!--Alarmas-->
     <string name="alarm_hora">08:00</string>
     <string name="alarm_periodo">AM</string>
@@ -49,6 +50,8 @@
     <string name="alarm_day5">J</string>
     <string name="alarm_day6">V</string>
     <string name="alarm_day7">S</string>
+    <string name="alarm_todos_dias">Todos los días</string>
+    <string name="alarm_una_vez">Sólo una vez</string>
     <!--Finanzas-->
     <string name="action_gasto">Gasto nuevo</string>
     <string name="action_ingreso">Ingreso nuevo</string>
@@ -64,6 +67,33 @@
     <string name="fin_hint_ingreso">1800</string>
     <string name="fin_hint_gasto_nota">Recibo teléfono</string>
     <string name="fin_hint_ingreso_nota">Beca manutención</string>
+    <string name="fin_txt_fecha">Fecha</string>
+    <string name="fin_txt_fecha_2">10–06–2019</string>
+    <string name="fin_txt_gasto_cantidad">$500</string>
+    <string name="fin_txt_ingreso_cantidad">$1800</string>
+    <string-array name="array_categorias_gastos">
+        <item>Alimentación</item>
+        <item>Automóvil</item>
+        <item>Educación</item>
+        <item>Entretenimiento</item>
+        <item>Facturas</item>
+        <item>Higiene</item>
+        <item>Hogar</item>
+        <item>Mascotas</item>
+        <item>Otros</item>
+        <item>Ropa</item>
+        <item>Salud</item>
+        <item>Transporte</item>
+    </string-array>
+    <string-array name="array_categorias_ingresos">
+        <item>Beca</item>
+        <item>Cupones</item>
+        <item>Inversiones</item>
+        <item>Otros</item>
+        <item>Premio</item>
+        <item>Regalo</item>
+        <item>Salario</item>
+    </string-array>
     <!--Notas-->
     <string name="nota_hint_titulo">Querido diario…</string>
     <string name="nota_hint_contenido">Hoy he…</string>
@@ -82,6 +112,7 @@
     <string name="nota_txt_ejem_cont">03:45 PM Hoy en el trabajo…</string>
     <string name="nota_txt_ejem_fecha">DOM 31</string>
     <string name="nota_txt_ejem_titulo">Nota 1</string>
+    <string name="nota_ver_imagen">Imagen guardada por el usuario</string>
     <!--Salud-->
     <string name="action_medicamento">Medicamento nuevo</string>
     <string name="action_categoria">Categoría nueva</string>
@@ -94,6 +125,10 @@
     <string name="med_hint_dosis">1</string>
     <string name="med_hint_cantidad">30</string>
     <string name="med_hint_categoria">Categoría 1</string>
+    <string name="med_spinner_categoria">No hay categorías registradas…</string>
+    <string-array name="array_categorias_medicamentos">
+        <item>TDAH</item>
+    </string-array>
     <!--TDAH-->
     <string name="tdah_txt_aviso">Se requiere conexión a internet para acceder a los siguientes recursos.</string>
     <string name="tdah_txt_test">Test realizado por Psych Central (inglés)</string>
@@ -127,5 +162,7 @@
     <string name="title_activity_crear_medicamento">Medicamento</string>
     <string name="title_activity_crear_categoria">Categoría</string>
     <string name="title_activity_configuracion">Configuración</string>
+    <string name="nota_img_desc">Imagen</string>
+    <string name="nota_img_desc_2">Imagen Estado Emocional</string>
 
 </resources>

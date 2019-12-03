@@ -14,45 +14,4 @@
 
     </com.github.mikephil.charting.charts.PieChart>
 
-    <!--<LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/fin_txt_gastos"
-            android:textAlignment="center" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/fin_txt_ingresos"
-            android:textAlignment="center" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:baselineAligned="false"
-        android:orientation="horizontal">
-
-        <ListView
-            android:id="@+id/lvCategGasto"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
-
-        </ListView>
-
-        <ListView
-            android:id="@+id/lvCategIngreso"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
-    </LinearLayout>-->
-
 </RelativeLayout>

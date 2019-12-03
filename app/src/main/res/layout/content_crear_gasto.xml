@@ -22,7 +22,22 @@
         android:ems="10"
         android:hint="@string/fin_hint_gasto"
         android:importantForAutofill="no"
-        android:inputType="number" />
+        android:inputType="number|numberDecimal" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:text="@string/fin_txt_fecha" />
+
+    <TextView
+        android:id="@+id/tvGastoFecha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        tools:text="@string/fin_txt_fecha_2" />
 
     <TextView
         android:layout_width="match_parent"
@@ -37,7 +52,7 @@
         android:ems="10"
         android:hint="@string/fin_hint_gasto_nota"
         android:importantForAutofill="no"
-        android:inputType="number" />
+        android:inputType="textPersonName|textCapSentences" />
 
     <TextView
         android:layout_width="match_parent"
@@ -49,7 +64,7 @@
         android:id="@+id/spGastoCateg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:entries="@array/array_categorias"
+        android:entries="@array/array_categorias_gastos"
         android:padding="5dp" />
 
 </LinearLayout>

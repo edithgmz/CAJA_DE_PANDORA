@@ -1,13 +1,14 @@
 package edith.gomez.cajadepandora.ui.notas;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import java.util.Objects;
 
@@ -16,7 +17,7 @@ import edith.gomez.cajadepandora.data.notas.EstadoEmocional;
 import edith.gomez.cajadepandora.data.notas.EstadoEmocionalAdapter;
 
 public class ElegirEstadoEmocional extends AppCompatActivity implements ListView.OnItemClickListener {
-    private EstadoEmocional[] aeeImgs = {
+    private EstadoEmocional[] aEstadosEmocionales = {
             new EstadoEmocional(R.drawable.ee01_angry, 11, "Enojado 1"),
             new EstadoEmocional(R.drawable.ee02_angry, 12, "Enojado 2"),
             new EstadoEmocional(R.drawable.ee03_angry, 13, "Enojado 3"),
@@ -56,12 +57,16 @@ public class ElegirEstadoEmocional extends AppCompatActivity implements ListView
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         //Se vincula la lista, agrega el adaptador y el listener
         ListView lvEdoEmo = findViewById(R.id.lvEdoEmo);
-        lvEdoEmo.setAdapter(new EstadoEmocionalAdapter(this, R.layout.layout_estado_emocional, aeeImgs));
+        lvEdoEmo.setAdapter(new EstadoEmocionalAdapter(this, R.layout.layout_estado_emocional, aEstadosEmocionales));
         lvEdoEmo.setOnItemClickListener(this);
     }
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+        //Enviar imagen a actividad Crear Nota
+        Intent inCrearNota = new Intent();
+        inCrearNota.putExtra("ESTADO_EMOCIONAL", aEstadosEmocionales[position].getEstadoEmocional());
+        setResult(Activity.RESULT_OK, inCrearNota);
+        finish();
     }
 }

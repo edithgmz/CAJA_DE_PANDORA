@@ -4,19 +4,16 @@ package edith.gomez.cajadepandora.data.notas;
  */
 
 public class Nota {
-    private String titulo, contenido, fecha, audio;
-    private int alarmas, salud, actividades, edoemocional, imagen;
+    private String titulo, contenido, fecha;
+    private byte[] audio, imagen, estadoEmocional;
 
-    public Nota(String titulo, String contenido, String fecha, String audio, int alarmas, int salud, int actividades, int imagen, int edoemocional) {
+    public Nota(String titulo, String contenido, String fecha, byte[] imagen, byte[] audio, byte[] estadoEmocional) {
         this.titulo = titulo;
         this.contenido = contenido;
         this.fecha = fecha;
         this.audio = audio;
-        this.alarmas = alarmas;
-        this.salud = salud;
-        this.actividades = actividades;
         this.imagen = imagen;
-        this.edoemocional = edoemocional;
+        this.estadoEmocional = estadoEmocional;
     }
 
     public String getTitulo() {
@@ -31,28 +28,16 @@ public class Nota {
         return fecha;
     }
 
-    public int getAlarmas() {
-        return alarmas;
-    }
-
-    public int getSalud() {
-        return salud;
-    }
-
-    public int getActividades() {
-        return actividades;
-    }
-
-    public int getImagen() {
+    public byte[] getImagen() {
         return imagen;
     }
 
-    public int getEdoemocional() {
-        return edoemocional;
+    public void setImagen(byte[] imagen) {
+        this.imagen = imagen;
     }
 
-    public String getAudio() {
-        return audio;
+    public byte[] getEstadoEmocional() {
+        return estadoEmocional;
     }
 
     public void setTitulo(String titulo) {
@@ -67,27 +52,15 @@ public class Nota {
         this.fecha = fecha;
     }
 
-    public void setAlarmas(int alarmas) {
-        this.alarmas = alarmas;
+    public void setEstadoEmocional(byte[] estadoEmocional) {
+        this.estadoEmocional = estadoEmocional;
     }
 
-    public void setSalud(int salud) {
-        this.salud = salud;
+    public byte[] getAudio() {
+        return audio;
     }
 
-    public void setActividades(int actividades) {
-        this.actividades = actividades;
-    }
-
-    public void setImagen(int imagen) {
-        this.imagen = imagen;
-    }
-
-    public void setEdoemocional(int edoemocional) {
-        this.edoemocional = edoemocional;
-    }
-
-    public void setAudio(String audio) {
+    public void setAudio(byte[] audio) {
         this.audio = audio;
     }
 }

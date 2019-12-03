@@ -21,21 +21,22 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1.5"
-            android:text="@string/alarm_hora"
-            android:textAlignment="textEnd"
+            android:textAlignment="center"
             android:textColor="@android:color/black"
             android:textSize="50sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:text="@string/alarm_hora" />
 
         <TextView
-            android:id="@+id/tvAlarmaAmPm"
+            android:id="@+id/tvAlarmaPeriodo"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/alarm_periodo"
             android:textAlignment="viewStart"
             android:textColor="@android:color/black"
-            android:textSize="30sp" />
+            android:textSize="30sp"
+            android:visibility="gone"
+            tools:text="@string/alarm_periodo" />
     </LinearLayout>
 
     <TextView
@@ -112,7 +113,8 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginTop="5dp"
-        android:background="?android:attr/listDivider" />
+        android:background="?android:attr/listDivider"
+        android:visibility="gone" />
 
     <TextView
         android:layout_width="match_parent"
@@ -122,7 +124,8 @@
         android:layout_marginEnd="5dp"
         android:text="@string/alarm_snooze"
         android:textColor="@android:color/black"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:visibility="gone" />
 
     <TextView
         android:id="@+id/tvAlarmaPosponer"
@@ -131,13 +134,15 @@
         android:layout_marginStart="5dp"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="5dp"
-        android:text="@string/alarm_snooze_op" />
+        android:visibility="gone"
+        tools:text="@string/alarm_snooze_op" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginTop="5dp"
-        android:background="?android:attr/listDivider" />
+        android:background="?android:attr/listDivider"
+        android:visibility="gone" />
 
     <TextView
         android:layout_width="match_parent"
@@ -147,7 +152,8 @@
         android:layout_marginEnd="5dp"
         android:text="@string/alarm_tono"
         android:textColor="@android:color/black"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:visibility="gone" />
 
     <TextView
         android:id="@+id/tvAlarmaTono"
@@ -156,7 +162,8 @@
         android:layout_marginStart="5dp"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="5dp"
-        android:text="@string/alarm_tono_op" />
+        android:visibility="gone"
+        tools:text="@string/alarm_tono_op" />
 
     <View
         android:layout_width="match_parent"
@@ -171,7 +178,8 @@
         android:layout_margin="5dp"
         android:ems="10"
         android:hint="@string/txt_nom"
-        android:inputType="textPersonName" />
+        android:importantForAutofill="no"
+        android:inputType="textPersonName|textCapSentences" />
 
     <View
         android:layout_width="match_parent"

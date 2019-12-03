@@ -22,16 +22,26 @@
         app:textColorDaysOfAnotherMonth="@android:color/white"
         app:textColorDaysOfMonth="@android:color/white"
         app:textColorMonthAndYear="@color/colorCalendar"
-        app:textColorSelectedDay="@android:color/black" />
+        app:textColorSelectedDay="@android:color/black">
 
-    <View
-        android:id="@+id/divider"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="?android:attr/listDivider" />
+    </com.darwindeveloper.onecalendar.views.OneCalendarView>
 
-    <ListView
-        android:id="@+id/lvNotasPpal"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider" />
+
+        <ListView
+            android:id="@+id/lvNotasPpal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
 </LinearLayout>

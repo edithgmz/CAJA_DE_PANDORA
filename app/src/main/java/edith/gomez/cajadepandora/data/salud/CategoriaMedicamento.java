@@ -5,7 +5,6 @@ package edith.gomez.cajadepandora.data.salud;
 
 public class CategoriaMedicamento {
     private String nombre;
-    private final String tipo = "medicamento";
 
     public CategoriaMedicamento(String nombre) {
         this.nombre = nombre;
@@ -13,10 +12,6 @@ public class CategoriaMedicamento {
 
     public String getNombre() {
         return nombre;
-    }
-
-    public String getTipo() {
-        return tipo;
     }
 
     public void setNombre(String nombre) {

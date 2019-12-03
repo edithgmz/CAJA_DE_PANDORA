@@ -4,19 +4,24 @@ package edith.gomez.cajadepandora.data.salud;
  */
 
 public class Medicamento {
-    private String nombre;
+    private String medicamento, categoria;
     private int dosis, hora, minutos, cantidad;
 
-    public Medicamento(String nombre, int dosis, int hora, int minutos, int cantidad) {
-        this.nombre = nombre;
+    public Medicamento(String medicamento, String categoria, int dosis, int hora, int minutos, int cantidad) {
+        this.medicamento = medicamento;
+        this.categoria = categoria;
         this.dosis = dosis;
         this.hora = hora;
         this.minutos = minutos;
         this.cantidad = cantidad;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getMedicamento() {
+        return medicamento;
+    }
+
+    public void setMedicamento(String medicamento) {
+        this.medicamento = medicamento;
     }
 
     public int getDosis() {
@@ -35,8 +40,12 @@ public class Medicamento {
         return cantidad;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
     }
 
     public void setDosis(int dosis) {

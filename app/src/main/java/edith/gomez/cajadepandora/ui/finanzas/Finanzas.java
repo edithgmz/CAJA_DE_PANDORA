@@ -18,18 +18,64 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import edith.gomez.cajadepandora.R;
 
 public class Finanzas extends AppCompatActivity implements FloatingActionButton.OnClickListener {
+    BottomNavigationView navFinanzas;
     private Intent inCrearGasto, inCrearIngreso;
     private FloatingActionButton fabFinanzas, fabGasto, fabIngreso;
     private TextView txtGasto, txtIngreso;
     private Animation fab_abrir, fab_cerrar, fab_rotar_reloj, fab_rotar_contra_reloj;
     private boolean isOpen = false;
+    private BottomNavigationView.OnNavigationItemSelectedListener itemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        @Override public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            switch (item.getItemId()) {
+                case R.id.nav_ingreso:
+                    cargarFragment(new IngresosFrag());
+                    return true;
+                case R.id.nav_gasto:
+                    cargarFragment(new GastosFrag());
+                    return true;
+                case R.id.nav_stats:
+                    cargarFragment(new EstadisticasFrag());
+                    return true;
+            }
+            return false;
+        }
+    };
+
+    private void abrirFABMenu() {
+        isOpen = true;
+        //Mostrar botones
+        txtGasto.setVisibility(View.VISIBLE);
+        txtIngreso.setVisibility(View.VISIBLE);
+        //Animaciones
+        fabGasto.startAnimation(fab_abrir);
+        fabIngreso.startAnimation(fab_abrir);
+        fabFinanzas.startAnimation(fab_rotar_reloj);
+        //Establecer propiedad
+        fabGasto.setClickable(true);
+        fabIngreso.setClickable(true);
+    }
+
+    private void cerrarFABMenu() {
+        isOpen = false;
+        //Ocultar botones
+        txtGasto.setVisibility(View.INVISIBLE);
+        txtIngreso.setVisibility(View.INVISIBLE);
+        //Animaciones
+        fabGasto.startAnimation(fab_cerrar);
+        fabIngreso.startAnimation(fab_cerrar);
+        fabFinanzas.startAnimation(fab_rotar_contra_reloj);
+        //Establecer propiedad
+        fabGasto.setClickable(false);
+        fabIngreso.setClickable(false);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_finanzas);
         //Vincular componentes
-        BottomNavigationView navView = findViewById(R.id.navFinanzas);
+        navFinanzas = findViewById(R.id.navFinanzas);
         fabFinanzas = findViewById(R.id.fabFinanzas);
         fabGasto = findViewById(R.id.fabGasto);
         fabIngreso = findViewById(R.id.fabIngreso);
@@ -40,7 +86,7 @@ public class Finanzas extends AppCompatActivity implements FloatingActionButton.
         fab_rotar_reloj = AnimationUtils.loadAnimation(this, R.anim.fab_rotar_reloj);
         fab_rotar_contra_reloj = AnimationUtils.loadAnimation(this, R.anim.fab_rotar_contra_reloj);
         //Navigation
-        navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        navFinanzas.setOnNavigationItemSelectedListener(itemSelectedListener);
         //Botón flotante principal
         fabFinanzas.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,61 +108,11 @@ public class Finanzas extends AppCompatActivity implements FloatingActionButton.
         cargarFragment(new IngresosFrag());
     }
 
-    private void abrirFABMenu(){
-        isOpen = true;
-        //Mostrar botones
-        txtGasto.setVisibility(View.VISIBLE);
-        txtIngreso.setVisibility(View.VISIBLE);
-        //Animaciones
-        fabGasto.startAnimation(fab_abrir);
-        fabIngreso.startAnimation(fab_abrir);
-        fabFinanzas.startAnimation(fab_rotar_reloj);
-        //Establecer propiedad
-        fabGasto.setClickable(true);
-        fabIngreso.setClickable(true);
-    }
-
-    private void cerrarFABMenu(){
-        isOpen =false;
-        //Ocultar botones
-        txtGasto.setVisibility(View.INVISIBLE);
-        txtIngreso.setVisibility(View.INVISIBLE);
-        //Animaciones
-        fabGasto.startAnimation(fab_cerrar);
-        fabIngreso.startAnimation(fab_cerrar);
-        fabFinanzas.startAnimation(fab_rotar_contra_reloj);
-        //Establecer propiedad
-        fabGasto.setClickable(false);
-        fabIngreso.setClickable(false);
-    }
-
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.nav_ingreso:
-                    cargarFragment(new IngresosFrag());
-                    return true;
-                case R.id.nav_gasto:
-                    cargarFragment(new GastosFrag());
-                    return true;
-                case R.id.nav_stats:
-                    cargarFragment(new EstadisticasFrag());
-                    return true;
-            }
-            return false;
-        }
-    };
-
-    private boolean cargarFragment(Fragment fragment){
+    private void cargarFragment(Fragment fragment) {
         //Se cambian los fragmentos
         if(fragment != null){
             getSupportFragmentManager().beginTransaction().replace(R.id.flFinanzas, fragment).commit();
-            return true;
         }
-        return false;
     }
 
     @Override

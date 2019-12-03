@@ -107,13 +107,11 @@ public class Salud extends AppCompatActivity implements FloatingActionButton.OnC
         }
     };
 
-    private boolean cargarFragment(Fragment fragment){
+    private void cargarFragment(Fragment fragment) {
         //Se cambian los fragmentos
         if(fragment != null){
             getSupportFragmentManager().beginTransaction().replace(R.id.flSalud, fragment).commit();
-            return true;
         }
-        return false;
     }
 
     @Override

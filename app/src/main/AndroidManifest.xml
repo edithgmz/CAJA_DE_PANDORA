@@ -2,22 +2,29 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="edith.gomez.cajadepandora">
-
     <!-- Permisos necesarios -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- Permiso para leer en el almacenamiento externo -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- Permiso para escribir en el almacenamiento externo -->
     <uses-permission android:name="android.permission.RECORD_AUDIO" /> <!-- Permiso para grabar audio -->
     <uses-permission android:name="android.permission.INTERNET" />
 
-    <!-- Configuración de las actividades -->
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+        <activity
+            android:name=".ui.notas.VerImagen"
+            android:parentActivityName=".ui.notas.CrearNota"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.notas.CrearNota" />
+        </activity>
         <activity
             android:name=".ui.salud.CrearCategoriaMed"
             android:label="@string/title_activity_crear_categoria"
@@ -26,16 +33,15 @@
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="edith.gomez.cajadepandora.ui.salud.Salud" />
+                android:value=".ui.salud.Salud" />
         </activity>
         <activity
             android:name=".ui.extras.VistaWeb"
             android:parentActivityName=".ui.extras.Tdah"
-            android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="edith.gomez.cajadepandora.ui.extras.Tdah" />
+                android:value=".ui.extras.Tdah" />
         </activity>
         <activity
             android:name=".ui.notas.ElegirEstadoEmocional"
@@ -45,7 +51,7 @@
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="edith.gomez.cajadepandora.ui.notas.CrearNota" />
+                android:value=".ui.notas.CrearNota" />
         </activity>
         <activity
             android:name=".ui.finanzas.CrearIngreso"
@@ -55,7 +61,7 @@
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="edith.gomez.cajadepandora.ui.finanzas.Finanzas" />
+                android:value=".ui.finanzas.Finanzas" />
         </activity>
         <activity
             android:name=".ui.finanzas.CrearGasto"
@@ -65,7 +71,7 @@
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="edith.gomez.cajadepandora.ui.finanzas.Finanzas" />
+                android:value=".ui.finanzas.Finanzas" />
         </activity>
         <activity
             android:name=".ui.salud.CrearMedicamento"
@@ -75,7 +81,7 @@
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="edith.gomez.cajadepandora.ui.salud.Salud" />
+                android:value=".ui.salud.Salud" />
         </activity>
         <activity
             android:name=".ui.notas.CrearNota"
@@ -85,7 +91,7 @@
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="edith.gomez.cajadepandora.ui.notas.Notas" />
+                android:value=".ui.notas.Notas" />
         </activity>
         <activity
             android:name=".ui.alarmas.CrearAlarma"
@@ -95,7 +101,7 @@
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="edith.gomez.cajadepandora.ui.alarmas.Alarmas" />
+                android:value=".ui.alarmas.Alarmas" />
         </activity>
         <activity
             android:name=".ui.actividades.CrearActividad"
@@ -105,7 +111,7 @@
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="edith.gomez.cajadepandora.ui.actividades.Actividades" />
+                android:value=".ui.actividades.Actividades" />
         </activity>
         <activity
             android:name=".ui.extras.Tdah"
@@ -115,7 +121,7 @@
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="edith.gomez.cajadepandora.Principal" />
+                android:value=".Principal" />
         </activity>
         <activity
             android:name=".ui.extras.Info"
@@ -125,7 +131,7 @@
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="edith.gomez.cajadepandora.Principal" />
+                android:value=".Principal" />
         </activity>
         <activity
             android:name=".ui.salud.Salud"
@@ -134,7 +140,7 @@
             android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="edith.gomez.cajadepandora.Principal" />
+                android:value=".Principal" />
         </activity>
         <activity
             android:name=".ui.notas.Notas"
@@ -144,7 +150,7 @@
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="edith.gomez.cajadepandora.Principal" />
+                android:value=".Principal" />
         </activity>
         <activity
             android:name=".ui.finanzas.Finanzas"
@@ -153,7 +159,7 @@
             android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="edith.gomez.cajadepandora.Principal" />
+                android:value=".Principal" />
         </activity>
         <activity
             android:name=".ui.actividades.Actividades"
@@ -163,7 +169,7 @@
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="edith.gomez.cajadepandora.Principal" />
+                android:value=".Principal" />
         </activity>
         <activity
             android:name=".ui.alarmas.Alarmas"
@@ -173,7 +179,7 @@
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="edith.gomez.cajadepandora.Principal" />
+                android:value=".Principal" />
         </activity>
         <activity
             android:name=".Principal"

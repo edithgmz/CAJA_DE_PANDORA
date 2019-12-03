@@ -21,6 +21,13 @@ import com.darwindeveloper.onecalendar.views.OneCalendarView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+
+import edith.gomez.cajadepandora.data.BaseDatos;
+import edith.gomez.cajadepandora.data.notas.Nota;
+import edith.gomez.cajadepandora.data.notas.NotaAdapter;
 import edith.gomez.cajadepandora.ui.actividades.Actividades;
 import edith.gomez.cajadepandora.ui.alarmas.Alarmas;
 import edith.gomez.cajadepandora.ui.extras.Info;
@@ -30,11 +37,14 @@ import edith.gomez.cajadepandora.ui.notas.CrearNota;
 import edith.gomez.cajadepandora.ui.notas.Notas;
 import edith.gomez.cajadepandora.ui.salud.Salud;
 
-public class Principal extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,
-        ListView.OnItemClickListener, OneCalendarView.OnCalendarChangeListener, OneCalendarView.OneCalendarClickListener {
+public class Principal extends AppCompatActivity
+        implements NavigationView.OnNavigationItemSelectedListener, ListView.OnItemClickListener, OneCalendarView.OnCalendarChangeListener,
+                   OneCalendarView.OneCalendarClickListener {
     private DrawerLayout drawer;
-    private Intent inAlarmas, inNotas, inActividades, inSalud, inFinanzas, inTdah, inInfo, inCrearNota;
+    private Intent inAlarmas, inNotas, inActividades, inSalud, inFinanzas, inTdah, inInfo, inCrearNota1, inCrearNota2;
     private OneCalendarView calendario;
+    private ListView lvNotasPpal;
+    private ArrayList<Nota> lstNotas = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,15 +53,14 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
         //Vincular componentes
         Toolbar toolbarPrincipal = findViewById(R.id.toolbarPrincipal);
         NavigationView navigation = findViewById(R.id.navigation);
-        final FloatingActionButton fabNotaPpal = findViewById(R.id.fabNotaPpal);
+        FloatingActionButton fabNotaPpal = findViewById(R.id.fabNotaPpal);
+        lvNotasPpal = findViewById(R.id.lvNotasPpal);
         calendario = findViewById(R.id.calendario);
-        ListView lvNotasPpal = findViewById(R.id.lvNotasPpal);
         drawer = findViewById(R.id.drawer_layout);
         //Toolbar
         setSupportActionBar(toolbarPrincipal);
         //Navigation
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer,
-                toolbarPrincipal, R.string.nav_drawer_open, R.string.nav_drawer_close);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbarPrincipal, R.string.nav_drawer_open, R.string.nav_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigation.setNavigationItemSelectedListener(this);
@@ -63,12 +72,12 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
         inFinanzas = new Intent(this, Finanzas.class);
         inTdah = new Intent(this, Tdah.class);
         inInfo = new Intent(this, Info.class);
-        inCrearNota = new Intent(this, CrearNota.class);
+        inCrearNota1 = new Intent(this, CrearNota.class);
+        inCrearNota2 = new Intent(this, CrearNota.class);
         //Botón flotante
         fabNotaPpal.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(inCrearNota);
+            @Override public void onClick(View v) {
+                startActivity(inCrearNota1);
             }
         });
         //Calendario
@@ -76,6 +85,15 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
         calendario.setOneCalendarClickListener(this);
         //Lista de notas
         lvNotasPpal.setOnItemClickListener(this);
+    }
+
+    @Override protected void onResume() {
+        super.onResume();
+        //Base de datos
+        BaseDatos baseDatos = new BaseDatos(this);
+        lstNotas = baseDatos.datosNota();
+        lvNotasPpal.setAdapter(new NotaAdapter(this, R.layout.layout_nota, lstNotas));
+        baseDatos.close();
     }
 
     @Override
@@ -100,7 +118,7 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
         //Muestra los ítems del menú desplegable
         int id = item.getItemId();
         if (id == R.id.action_config_principal) {
-            Toast.makeText(this, "Configuración de la aplicación", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Configuración de la aplicación aún no disponible.", Toast.LENGTH_SHORT).show();
         }
         return super.onOptionsItemSelected(item);
     }
@@ -108,7 +126,15 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         //Envía el contenido de la nota seleccionada a la actividad Crear Nota
-        startActivity(inCrearNota);
+        Bundle bDatosNota = new Bundle();
+        bDatosNota.putString("TITULO", lstNotas.get(position).getTitulo());
+        bDatosNota.putString("CONTENIDO", lstNotas.get(position).getContenido());
+        bDatosNota.putByteArray("IMAGEN", lstNotas.get(position).getImagen());
+        bDatosNota.putByteArray("AUDIO", lstNotas.get(position).getAudio());
+        bDatosNota.putByteArray("ESTADO_EMOCIONAL", lstNotas.get(position).getEstadoEmocional());
+        bDatosNota.putString("FECHA", lstNotas.get(position).getFecha());
+        inCrearNota2.putExtras(bDatosNota);
+        startActivity(inCrearNota2);
     }
 
     @Override
@@ -160,10 +186,29 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
 
     @Override
     public void dateOnClick(Day day, int position) {
+        //Obtener fecha seleccionada del calendario
+        Calendar calendar = Calendar.getInstance();
+        Date date = day.getDate();
+        calendar.setTime(date);
+        int anio = calendario.getYear();
+        int diaNum = calendar.get(Calendar.DAY_OF_MONTH);
+        String mes = calendario.getStringMonth(calendario.getMonth()).substring(0, 3).toLowerCase();
+        String[] fecha = {diaNum + " " + mes + " " + anio};
+        //Base de datos
+        BaseDatos baseDatos = new BaseDatos(this);
+        //Realizar acción dependiendo si un día ha sido seleccionado o no
         if (calendario.isDaySelected(position)) {
+            //Quitar color del día seleccionado y mostrar lista completa de notas
             calendario.removeDaySeleted(position);
+            lstNotas = baseDatos.datosNota();
+            baseDatos.close();
+            lvNotasPpal.setAdapter(new NotaAdapter(this, R.layout.layout_nota, lstNotas));
         } else {
+            //Poner color en día seleccionado y mostrar lista filtrada de notas
             calendario.addDaySelected(position);
+            lstNotas = baseDatos.notasPorFecha(fecha);
+            baseDatos.close();
+            lvNotasPpal.setAdapter(new NotaAdapter(this, R.layout.layout_nota, lstNotas));
         }
     }
 

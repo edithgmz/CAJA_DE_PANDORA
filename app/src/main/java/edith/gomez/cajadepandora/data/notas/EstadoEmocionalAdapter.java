@@ -41,7 +41,7 @@ public class EstadoEmocionalAdapter extends ArrayAdapter<EstadoEmocional> {
             //Se vincula el ImageView, se obtiene la imagen del arreglo y se coloca en el ImageView
             estadoEmocional = vLayout.findViewById(R.id.estadoEmocional);
             EstadoEmocional eeImagen = aeeDatos[position];
-            estadoEmocional.setImageResource(eeImagen.getImg());
+            estadoEmocional.setImageResource(eeImagen.getEstadoEmocional());
             //Devuelve el layout creado
             return vLayout;
         }

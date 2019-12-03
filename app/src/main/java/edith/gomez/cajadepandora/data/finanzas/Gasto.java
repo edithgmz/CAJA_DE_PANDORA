@@ -5,12 +5,13 @@ package edith.gomez.cajadepandora.data.finanzas;
 
 public class Gasto {
     private float cantidadGasto;
-    private String fechaGasto, categoriaGasto;
+    private String fechaGasto, categoriaGasto, notaGasto;
 
-    public Gasto(float cantidadGasto, String fechaGasto, String categoriaGasto) {
+    public Gasto(float cantidadGasto, String fechaGasto, String categoriaGasto, String notaGasto) {
         this.cantidadGasto = cantidadGasto;
         this.fechaGasto = fechaGasto;
         this.categoriaGasto = categoriaGasto;
+        this.notaGasto = notaGasto;
     }
 
     public float getCantidadGasto() {
@@ -25,6 +26,10 @@ public class Gasto {
         return categoriaGasto;
     }
 
+    public String getNotaGasto() {
+        return notaGasto;
+    }
+
     public void setCantidadGasto(float cantidadGasto) {
         this.cantidadGasto = cantidadGasto;
     }
@@ -35,5 +40,9 @@ public class Gasto {
 
     public void setCategoriaGasto(String categoriaGasto) {
         this.categoriaGasto = categoriaGasto;
+    }
+
+    public void setNotaGasto(String notaGasto) {
+        this.notaGasto = notaGasto;
     }
 }

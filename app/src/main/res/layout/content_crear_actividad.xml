@@ -23,78 +23,89 @@
         android:layout_marginBottom="5dp"
         android:ems="10"
         android:hint="@string/act_hint_nombre"
-        android:inputType="textPersonName" />
+        android:importantForAutofill="no"
+        android:inputType="textPersonName|textCapWords" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Fecha y hora" />
-
-    <TextView
-        android:id="@+id/tvActividadFechaHora"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:text="10-06-2019, 09:35 A.M."
-        android:textColor="@android:color/black"
-        android:textSize="18sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Categoría" />
+        android:text="@string/act_txt_fecha_hora" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
+        android:layout_height="match_parent"
         android:orientation="horizontal">
 
-        <RadioGroup
+        <TextView
+            android:id="@+id/tvActividadFecha"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1">
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"
+            android:text="@string/act_txt_fecha_2"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
-            <RadioButton
-                android:id="@+id/rbActividadCat1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@color/colorCategoria1"
-                android:buttonTint="@android:color/black"
-                android:checked="true"
-                android:ems="5"
-                android:textSize="8sp" />
-
-            <RadioButton
-                android:id="@+id/rbActividadCat2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@color/colorCategoria2"
-                android:buttonTint="@android:color/black"
-                android:ems="5"
-                android:textSize="8sp" />
-
-            <RadioButton
-                android:id="@+id/rbActividadCat3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@color/colorCategoria3"
-                android:buttonTint="@android:color/black"
-                android:ems="5"
-                android:textSize="8sp" />
-
-        </RadioGroup>
-
+        <TextView
+            android:id="@+id/tvActividadHora"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"
+            android:text="@string/act_txt_hora_2"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingStart="5dp"
+        android:text="@string/act_txt_categoria" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/rbActividadCat1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/colorCategoria1"
+            android:buttonTint="@color/colorLabel"
+            android:checked="true"
+            android:ems="5"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:id="@+id/rbActividadCat2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/colorCategoria2"
+            android:buttonTint="@color/colorLabel"
+            android:ems="5"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:id="@+id/rbActividadCat3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/colorCategoria3"
+            android:buttonTint="@color/colorLabel"
+            android:ems="5"
+            android:textSize="12sp" />
+
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="@string/txt_desc" />
 
     <EditText
@@ -104,6 +115,7 @@
         android:ems="10"
         android:gravity="start|top"
         android:hint="@string/act_hint_desc"
-        android:inputType="textMultiLine" />
+        android:importantForAutofill="no"
+        android:inputType="textMultiLine|textCapSentences" />
 
 </LinearLayout>

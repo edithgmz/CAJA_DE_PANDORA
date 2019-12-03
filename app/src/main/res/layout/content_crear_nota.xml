@@ -15,8 +15,8 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/nota_hint_titulo"
-        android:inputType="textPersonName"
-        android:importantForAutofill="no" />
+        android:importantForAutofill="no"
+        android:inputType="textPersonName|textCapWords" />
 
     <View
         android:layout_width="match_parent"
@@ -31,10 +31,32 @@
         android:ems="10"
         android:gravity="start|top"
         android:hint="@string/nota_hint_contenido"
-        android:inputType="textMultiLine"
+        android:importantForAutofill="no"
+        android:inputType="textMultiLine|textCapSentences"
         android:textColor="@android:color/black"
-        android:textSize="16sp"
-        android:importantForAutofill="no" />
+        android:textSize="16sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/ivNotaImagen"
+            android:layout_width="100dp"
+            android:layout_height="90dp"
+            android:contentDescription="@string/nota_img_desc"
+            android:visibility="gone"
+            tools:srcCompat="@drawable/caja_de_pandora" />
+
+        <ImageView
+            android:id="@+id/ivNotaEdoEmo"
+            android:layout_width="100dp"
+            android:layout_height="90dp"
+            android:contentDescription="@string/nota_img_desc_2"
+            android:visibility="gone"
+            tools:srcCompat="@drawable/ee06_crying" />
+    </LinearLayout>
 
     <View
         android:layout_width="match_parent"
@@ -60,7 +82,7 @@
             android:paddingEnd="10dp">
 
             <TextView
-                android:id="@+id/tvNotaTareas"
+                android:id="@+id/tvNotaActividades"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/act_activity_black_24dp"

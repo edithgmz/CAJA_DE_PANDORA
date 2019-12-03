@@ -5,18 +5,19 @@ package edith.gomez.cajadepandora.data.alarmas;
 
 public class Alarma {
     private int hora, minutos, posponer_minutos, posponer_veces;
-    private String nombre, periodo, tono;
+    private String periodo, nombre;
     private boolean repetir, activa;
     private String[] dias;
+    private byte[] tono;
 
-    public Alarma(int hora, int minutos, int posponer_minutos, int posponer_veces, String nombre,
-                  String periodo, String tono, boolean repetir, boolean activa, String[] dias) {
+    public Alarma(int hora, int minutos, int posponer_minutos, int posponer_veces, String periodo, String nombre, byte[] tono, boolean repetir,
+                  boolean activa, String[] dias) {
         this.hora = hora;
         this.minutos = minutos;
         this.posponer_minutos = posponer_minutos;
         this.posponer_veces = posponer_veces;
-        this.nombre = nombre;
         this.periodo = periodo;
+        this.nombre = nombre;
         this.tono = tono;
         this.repetir = repetir;
         this.activa = activa;
@@ -39,15 +40,15 @@ public class Alarma {
         return posponer_veces;
     }
 
-    public String getNombre() {
-        return nombre;
-    }
-
     public String getPeriodo() {
         return periodo;
     }
 
-    public String getTono() {
+    public String getNombre() {
+        return nombre;
+    }
+
+    public byte[] getTono() {
         return tono;
     }
 
@@ -79,16 +80,16 @@ public class Alarma {
         this.posponer_veces = posponer_veces;
     }
 
+    public void setTono(byte[] tono) {
+        this.tono = tono;
+    }
+
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
     public void setPeriodo(String periodo) {
         this.periodo = periodo;
-    }
-
-    public void setTono(String tono) {
-        this.tono = tono;
     }
 
     public void setRepetir(boolean repetir) {

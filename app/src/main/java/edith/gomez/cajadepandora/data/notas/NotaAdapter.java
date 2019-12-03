@@ -19,6 +19,9 @@ import androidx.annotation.Nullable;
 import java.util.ArrayList;
 
 import edith.gomez.cajadepandora.R;
+import edith.gomez.cajadepandora.data.BaseDatos;
+
+import static edith.gomez.cajadepandora.data.BaseDatos.byteArrayToImage;
 
 public class NotaAdapter extends ArrayAdapter<Nota> {
         private Context context;
@@ -37,7 +40,7 @@ public class NotaAdapter extends ArrayAdapter<Nota> {
         @Override
         public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
             ImageView notaImagen, notaEstadoEmocional;
-            TextView notaTitulo, notaExtracto, notaTareas, notaAlarmas, notaSalud, notaFecha;
+            TextView notaTitulo, notaExtracto, notaActividades, notaAlarmas, notaSalud, notaFecha;
             View vLayout = convertView;
             //Si el layout no existe lo crea
             if(vLayout == null){
@@ -49,32 +52,38 @@ public class NotaAdapter extends ArrayAdapter<Nota> {
             notaEstadoEmocional = vLayout.findViewById(R.id.notaEstadoEmocional);
             notaTitulo = vLayout.findViewById(R.id.notaTitulo);
             notaExtracto = vLayout.findViewById(R.id.notaExtracto);
-            notaTareas = vLayout.findViewById(R.id.notaActividades);
+            notaActividades = vLayout.findViewById(R.id.notaActividades);
             notaAlarmas = vLayout.findViewById(R.id.notaAlarmas);
             notaSalud = vLayout.findViewById(R.id.notaSalud);
             notaFecha = vLayout.findViewById(R.id.notaFecha);
             //Crea lista de notas con los datos obtenidos del constructor
             ArrayList<Nota> alNotas = alDatos;
+            //Obtener conteos de la base de datos
+            BaseDatos baseDatos = new BaseDatos(context);
             //Verifica que la lista no se encuentre vacía
             if(alNotas != null){
                 //Se obtienen los datos de la lista
-                int imagen = alNotas.get(position).getImagen();
-                int actividades = alNotas.get(position).getActividades();
-                int alarmas = alNotas.get(position).getAlarmas();
-                int salud = alNotas.get(position).getSalud();
-                int estado_emocional = alNotas.get(position).getEdoemocional();
                 String titulo = alNotas.get(position).getTitulo();
                 String contenido = alNotas.get(position).getContenido();
                 String fecha = alNotas.get(position).getFecha();
+                String actividades = baseDatos.cantidadActividades() + "";
+                String alarmas = baseDatos.cantidadAlarmas() + "";
+                String salud = baseDatos.cantidadSalud() + "";
+                byte[] imagen = alNotas.get(position).getImagen();
+                byte[] estado_emocional = alNotas.get(position).getEstadoEmocional();
                 //Se colocan los datos en los componentes
-                notaImagen.setImageResource(imagen);
-                notaFecha.setText(fecha);
                 notaTitulo.setText(titulo);
                 notaExtracto.setText(contenido);
-                notaTareas.setText(String.format("%d", actividades));
-                notaAlarmas.setText(String.format("%d", alarmas));
-                notaSalud.setText(String.format("%d", salud));
-                notaEstadoEmocional.setImageResource(estado_emocional);
+                notaFecha.setText(fecha);
+                notaActividades.setText(actividades);
+                notaAlarmas.setText(alarmas);
+                notaSalud.setText(salud);
+                if (imagen != null) {
+                    notaImagen.setImageBitmap(byteArrayToImage(imagen));
+                }
+                if (estado_emocional != null) {
+                    notaEstadoEmocional.setImageBitmap(byteArrayToImage(estado_emocional));
+                }
             }
             //Devuelve el layout creado
             return vLayout;

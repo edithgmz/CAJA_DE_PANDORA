@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="5dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".ui.finanzas.CrearIngreso"
     tools:showIn="@layout/activity_crear_ingreso">
@@ -21,7 +22,22 @@
         android:ems="10"
         android:hint="@string/fin_hint_ingreso"
         android:importantForAutofill="no"
-        android:inputType="number" />
+        android:inputType="number|numberDecimal" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:text="@string/fin_txt_fecha" />
+
+    <TextView
+        android:id="@+id/tvIngresoFecha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        tools:text="@string/fin_txt_fecha_2" />
 
     <TextView
         android:layout_width="match_parent"
@@ -36,7 +52,7 @@
         android:ems="10"
         android:hint="@string/fin_hint_ingreso_nota"
         android:importantForAutofill="no"
-        android:inputType="number" />
+        android:inputType="textPersonName|textCapSentences" />
 
     <TextView
         android:layout_width="match_parent"
@@ -48,7 +64,7 @@
         android:id="@+id/spIngresoCateg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:entries="@array/array_categorias"
+        android:entries="@array/array_categorias_ingresos"
         android:padding="5dp" />
 
 </LinearLayout>

@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="5dp"
     tools:context=".ui.salud.MedicamentosFrag">
 
     <View
@@ -93,7 +94,7 @@
         android:background="?android:attr/listDivider" />
 
     <ListView
-        android:id="@+id/lvMeds"
+        android:id="@+id/lvMedicamentos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

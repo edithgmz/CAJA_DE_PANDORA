@@ -5,7 +5,6 @@ package edith.gomez.cajadepandora.data.finanzas;
 
 public class CategoriaGasto {
     private String nombre;
-    private final String tipo = "gasto";
 
     public CategoriaGasto(String nombre) {
         this.nombre = nombre;
@@ -13,10 +12,6 @@ public class CategoriaGasto {
 
     public String getNombre() {
         return nombre;
-    }
-
-    public String getTipo() {
-        return tipo;
     }
 
     public void setNombre(String nombre) {

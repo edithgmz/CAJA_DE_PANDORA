@@ -22,7 +22,7 @@
         android:ems="10"
         android:hint="@string/med_hint_nombre"
         android:importantForAutofill="no"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName|textCapWords" />
 
     <TextView
         android:layout_width="match_parent"
@@ -60,13 +60,14 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/tvMedAmPm"
+            android:id="@+id/tvMedPeriodo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/alarm_periodo"
             android:textColor="@android:color/black"
             android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:visibility="gone" />
     </LinearLayout>
 
     <TextView
@@ -96,7 +97,16 @@
         android:layout_height="wrap_content"
         android:backgroundTint="@android:color/black"
         android:dropDownWidth="match_parent"
-        android:entries="@array/array_categorias"
+        android:entries="@array/array_categorias_medicamentos"
         android:padding="5dp" />
+
+    <TextView
+        android:id="@+id/tvMedCategoria"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/med_spinner_categoria"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:visibility="gone" />
 
 </LinearLayout>

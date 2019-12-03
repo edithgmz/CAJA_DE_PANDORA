@@ -4,36 +4,45 @@ package edith.gomez.cajadepandora.data.finanzas;
  */
 
 public class Ingreso {
-    private float cantidad;
-    private String fecha, categoria;
+    private float cantidadIngreso;
+    private String fechaIngreso, categoriaIngreso, notaIngreso;
 
-    public Ingreso(float cantidad, String fecha, String categoria) {
-        this.cantidad = cantidad;
-        this.fecha = fecha;
-        this.categoria = categoria;
+    public Ingreso(float cantidadIngreso, String fechaIngreso, String categoriaIngreso, String notaIngreso) {
+        this.cantidadIngreso = cantidadIngreso;
+        this.fechaIngreso = fechaIngreso;
+        this.categoriaIngreso = categoriaIngreso;
+        this.notaIngreso = notaIngreso;
     }
 
-    public float getCantidad() {
-        return cantidad;
+    public float getCantidadIngreso() {
+        return cantidadIngreso;
     }
 
-    public String getFecha() {
-        return fecha;
+    public void setCantidadIngreso(float cantidadIngreso) {
+        this.cantidadIngreso = cantidadIngreso;
     }
 
-    public String getCategoria() {
-        return categoria;
+    public String getFechaIngreso() {
+        return fechaIngreso;
     }
 
-    public void setCantidad(float cantidad) {
-        this.cantidad = cantidad;
+    public void setFechaIngreso(String fechaIngreso) {
+        this.fechaIngreso = fechaIngreso;
     }
 
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
+    public String getCategoriaIngreso() {
+        return categoriaIngreso;
     }
 
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
+    public void setCategoriaIngreso(String categoriaIngreso) {
+        this.categoriaIngreso = categoriaIngreso;
+    }
+
+    public String getNotaIngreso() {
+        return notaIngreso;
+    }
+
+    public void setNotaIngreso(String notaIngreso) {
+        this.notaIngreso = notaIngreso;
     }
 }

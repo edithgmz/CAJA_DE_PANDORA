@@ -5,7 +5,7 @@
     android:padding="5dp">
 
     <TextView
-        android:id="@+id/tvActividadCat2"
+        android:id="@+id/actividadCategoria"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginEnd="5dp"
@@ -18,7 +18,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/tvActividadNombre2"
+            android:id="@+id/actividadNombre"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
@@ -29,7 +29,7 @@
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/tvActividadFechaHora2"
+            android:id="@+id/actividadFecha"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"

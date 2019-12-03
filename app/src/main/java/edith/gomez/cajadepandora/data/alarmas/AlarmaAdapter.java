@@ -34,7 +34,7 @@ public class AlarmaAdapter extends ArrayAdapter<Alarma> {
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        TextView alarmaHora, alarmaPeriodo, alarmaNombre, alarmaDias;
+        TextView alarmaHora, alarmaNombre, alarmaDias;
         Switch alarmaActiva;
         View vLayout = convertView;
         //Si el layout no existe lo crea
@@ -44,7 +44,6 @@ public class AlarmaAdapter extends ArrayAdapter<Alarma> {
         }
         //Vincular componentes
         alarmaHora = vLayout.findViewById(R.id.alarmaHora);
-        alarmaPeriodo = vLayout.findViewById(R.id.alarmaPeriodo);
         alarmaNombre = vLayout.findViewById(R.id.alarmaNombre);
         alarmaDias = vLayout.findViewById(R.id.alarmaDias);
         alarmaActiva = vLayout.findViewById(R.id.alarmaActiva);
@@ -55,36 +54,38 @@ public class AlarmaAdapter extends ArrayAdapter<Alarma> {
             //Se obtienen los datos de la lista
             int hora = alAlarmas.get(position).getHora();
             int minutos = alAlarmas.get(position).getMinutos();
-            String periodo = alAlarmas.get(position).getPeriodo();
             String nombre = alAlarmas.get(position).getNombre();
             String[] dias = alAlarmas.get(position).getDias();
             boolean activa = alAlarmas.get(position).isActiva();
+            String horaMinutos;
             //Se colocan los datos en los componentes
-            if(hora <= 0 && minutos <= 0){ //Despliegue de hora y minutos dependiendo de su valor
-                alarmaHora.setText("0" + hora + ":0" + minutos);
-            }else if(hora <= 0 && minutos > 9){
-                alarmaHora.setText("0" + hora + ":" + minutos);
-            }else if(hora > 9 && minutos <= 0){
-                alarmaHora.setText(hora + ":0" + minutos);
-            } else if(hora > 9 && minutos > 9) {
-                alarmaHora.setText(hora + ":" + minutos);
+            if (hora <= 9 && minutos <= 9) {
+                horaMinutos = "0" + hora + ":0" + minutos;
+            } else if (hora > 9 && minutos <= 9) {
+                horaMinutos = hora + ":0" + minutos;
+            } else if (hora <= 9) {
+                horaMinutos = "0" + hora + ":" + minutos;
+            } else {
+                horaMinutos = hora + ":" + minutos;
             }
-            alarmaPeriodo.setText(periodo);
+            alarmaHora.setText(horaMinutos);
             alarmaNombre.setText(nombre);
             if(dias.length != 0){ //Verifica que el arreglo de días no se encuentre vacío
                 if(dias[0].equals("todos")){
-                    alarmaDias.setText( "Todos los días" );
-                } else if(dias.length > 1){ //Recorre el arreglo de días y los muestra
+                    alarmaDias.setText(R.string.alarm_todos_dias);
+                } else { //Recorre el arreglo de días y los muestra
                     for (int i = 0, diasLength = dias.length; i < diasLength; i++) {
                         String dia = dias[i];
-                        alarmaDias.append(dia);
-                        if(i != diasLength-1){ //Separa con coma los días
-                            alarmaDias.append(", ");
+                        if (!dia.equals("")) {
+                            alarmaDias.append(dia);
+                            if (i != diasLength - 1) { //Separa con coma los días
+                                alarmaDias.append(", ");
+                            }
                         }
                     }
                 }
             } else { //El arreglo estaba vacío
-                alarmaDias.setText("Sólo una vez");
+                alarmaDias.setText(R.string.alarm_una_vez);
             }
             alarmaActiva.setChecked(activa);
         }

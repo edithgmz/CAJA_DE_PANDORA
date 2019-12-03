@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
+    android:descendantFocusability="blocksDescendants"
     android:padding="5dp">
 
     <LinearLayout
@@ -20,17 +22,18 @@
                 android:id="@+id/alarmaHora"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/alarm_hora"
                 android:textColor="@android:color/black"
-                android:textSize="36sp" />
+                android:textSize="36sp"
+                tools:text="@string/alarm_hora" />
 
             <TextView
                 android:id="@+id/alarmaPeriodo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/alarm_periodo"
                 android:textColor="@android:color/black"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:visibility="gone"
+                tools:text="@string/alarm_periodo" />
         </LinearLayout>
 
         <LinearLayout
@@ -42,12 +45,11 @@
                 android:id="@+id/alarmaNombre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/txt_nom"
                 android:textColor="@android:color/black"
-                android:textSize="15sp" />
+                android:textSize="12sp"
+                tools:text="@string/txt_nom" />
 
             <View
-                android:id="@+id/divider"
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
                 android:layout_margin="3dp"
@@ -57,9 +59,9 @@
                 android:id="@+id/alarmaDias"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/alarm_days"
                 android:textColor="@android:color/black"
-                android:textSize="15sp" />
+                android:textSize="12sp"
+                tools:text="@string/alarm_days" />
         </LinearLayout>
     </LinearLayout>
 

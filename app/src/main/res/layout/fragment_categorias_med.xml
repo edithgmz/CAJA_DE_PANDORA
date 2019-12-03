@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="5dp"
     tools:context=".ui.salud.CategoriasMedFrag">
 
     <View
@@ -54,7 +55,7 @@
         android:background="?android:attr/listDivider" />
 
     <ListView
-        android:id="@+id/lvCatMeds"
+        android:id="@+id/lvCategoriasMed"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

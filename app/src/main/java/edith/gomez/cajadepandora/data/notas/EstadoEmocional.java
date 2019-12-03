@@ -4,18 +4,18 @@ package edith.gomez.cajadepandora.data.notas;
  */
 
 public class EstadoEmocional {
-    private int img;
+    private int estadoEmocional;
     private int id;
     private String nombre;
 
-    public EstadoEmocional(int img, int id, String nombre) {
-        this.img = img;
+    public EstadoEmocional(int estadoEmocional, int id, String nombre) {
+        this.estadoEmocional = estadoEmocional;
         this.id = id;
         this.nombre = nombre;
     }
 
-    public int getImg() {
-        return img;
+    public int getEstadoEmocional() {
+        return estadoEmocional;
     }
 
     public int getId() {
@@ -26,8 +26,8 @@ public class EstadoEmocional {
         return nombre;
     }
 
-    public void setImg(int img) {
-        this.img = img;
+    public void setEstadoEmocional(int estadoEmocional) {
+        this.estadoEmocional = estadoEmocional;
     }
 
     public void setId(int id) {
